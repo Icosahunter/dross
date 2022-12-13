@@ -25,17 +25,17 @@ int main()
 	const int WINDOW_WIDTH = 800;
 	const int WINDOW_HEIGHT = 600;
 	Texture invader, missile, ship, boss, boss2, invader2, enemyMissile, wall;
-	invader.loadFromFile("face.png");
-	missile.loadFromFile("red.png");
-	ship.loadFromFile("Death_sphere.png");
-	invader2.loadFromFile("face_2.png");
-	boss.loadFromFile("boss.png");
-	boss2.loadFromFile("boss2.png");
-	wall.loadFromFile("wall.png");
-	enemyMissile.loadFromFile("enemyMissile.png");
+	invader.loadFromFile("../images/face.png");
+	missile.loadFromFile("../images/red.png");
+	ship.loadFromFile("../images/Death_sphere.png");
+	invader2.loadFromFile("../images/face_2.png");
+	boss.loadFromFile("../images/boss.png");
+	boss2.loadFromFile("../images/boss2.png");
+	wall.loadFromFile("../images/wall.png");
+	enemyMissile.loadFromFile("../images/enemyMissile.png");
 	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "aliens!");
 	Font font;
-	font.loadFromFile("The X-Files.ttf");
+	font.loadFromFile("../fonts/RubikBurned/RubikBurned-Regular.ttf");
  	Text text;
 
 	Player player(ship, missile, 5, 2, 5, true, window.getSize().y - 80);
