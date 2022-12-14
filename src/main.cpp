@@ -33,7 +33,7 @@ int main()
 	boss2.loadFromFile("./images/boss2.png");
 	wall.loadFromFile("./images/wall.png");
 	enemyMissile.loadFromFile("./images/enemyMissile.png");
-	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "aliens!");
+	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Dross");
 	Font font;
 	font.loadFromFile("./fonts/RubikBurned/RubikBurned-Regular.ttf");
  	Text text;

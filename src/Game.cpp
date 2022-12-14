@@ -185,7 +185,7 @@ void Game::winScreen()
 //calling this function sets up the instance of Display stored in game as a menu screen
 void Game::menuScreen()
 {
-	screen.setTitle("THE GAME");
+	screen.setTitle("Dross");
 	screen.setText("by Nathaniel Markham");
 	screen.setType(BUTTON);
 	screen.update();
