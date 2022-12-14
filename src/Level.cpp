@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 #include <ctime>
+#include <math.h>
 #include "Enemy.h"
 #include "Projectile.h"
 #include "Level.h"

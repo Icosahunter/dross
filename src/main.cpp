@@ -25,17 +25,17 @@ int main()
 	const int WINDOW_WIDTH = 800;
 	const int WINDOW_HEIGHT = 600;
 	Texture invader, missile, ship, boss, boss2, invader2, enemyMissile, wall;
-	invader.loadFromFile("../images/face.png");
-	missile.loadFromFile("../images/red.png");
-	ship.loadFromFile("../images/Death_sphere.png");
-	invader2.loadFromFile("../images/face_2.png");
-	boss.loadFromFile("../images/boss.png");
-	boss2.loadFromFile("../images/boss2.png");
-	wall.loadFromFile("../images/wall.png");
-	enemyMissile.loadFromFile("../images/enemyMissile.png");
+	invader.loadFromFile("./images/face.png");
+	missile.loadFromFile("./images/red.png");
+	ship.loadFromFile("./images/Death_sphere.png");
+	invader2.loadFromFile("./images/face_2.png");
+	boss.loadFromFile("./images/boss.png");
+	boss2.loadFromFile("./images/boss2.png");
+	wall.loadFromFile("./images/wall.png");
+	enemyMissile.loadFromFile("./images/enemyMissile.png");
 	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "aliens!");
 	Font font;
-	font.loadFromFile("../fonts/RubikBurned/RubikBurned-Regular.ttf");
+	font.loadFromFile("./fonts/RubikBurned/RubikBurned-Regular.ttf");
  	Text text;
 
 	Player player(ship, missile, 5, 2, 5, true, window.getSize().y - 80);
@@ -75,7 +75,7 @@ int main()
 	window.setFramerateLimit(60);
 
 	Texture starsTexture;
-	if (!starsTexture.loadFromFile("back.png"))
+	if (!starsTexture.loadFromFile("./images/back.png"))
 	{
 		cout << "Unable to load stars texture!" << endl;
 		exit(EXIT_FAILURE);
