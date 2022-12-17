@@ -12,8 +12,26 @@ src_files = [
     'src/main.cpp'
 ]
 
+flags = []
+if get_option('data_dir') != ''
+    flags += '-DDATA_DIR="' + get_option('data_dir') + '"'
+elif get_option('test')
+    flags += '-DDATA_DIR="' + meson.source_root() + '"'
+endif
+
+message(flags)
+
+if get_option('all_levels')
+    flags += '-DALL_LEVELS'
+endif
+
+if get_option('hit_box')
+    flags += '-DHIT_BOX'
+endif
+
 executable( meson.project_name(), 
             src_files,
             include_directories: inc,
             dependencies : sfml_dep,
+            cpp_args : flags
             )

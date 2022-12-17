@@ -1,0 +1,4 @@
+option('data_dir', type : 'string', value : '', description : 'Directory to look for data files.')
+option('test', type : 'boolean', value : false, description : 'If true, build to run from the source directory for testing.')
+option('all_levels', type : 'boolean', value : true, description : 'If true, build to run all levels.')
+option('hit_box', type : 'boolean', value: true, description : 'If true use small visible hit box, otherwise use sprite bounding box as hitbox.')

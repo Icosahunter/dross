@@ -5,6 +5,7 @@
 //
 #include <iostream>
 #include <cmath>
+#include <filesystem>
 #include "Game.h"
 #include "Level.h"
 #include "Enemy.h"
@@ -16,8 +17,17 @@ using namespace sf;
 // Nathaniel Markham
 //============================================================
 
-bool const HIT_BOX = true;
-bool const ALL_LEVELS = true;
+#ifndef DATA_DIR
+#define DATA_DIR "./"
+#endif
+
+#ifndef HIT_BOX
+#define HIT_BOX true
+#endif
+
+#ifndef ALL_LEVELS
+#define ALL_LEVELS true
+#endif
 
 int main()
 {
@@ -25,17 +35,30 @@ int main()
 	const int WINDOW_WIDTH = 800;
 	const int WINDOW_HEIGHT = 600;
 	Texture invader, missile, ship, boss, boss2, invader2, enemyMissile, wall;
-	invader.loadFromFile("./images/face.png");
-	missile.loadFromFile("./images/red.png");
-	ship.loadFromFile("./images/Death_sphere.png");
-	invader2.loadFromFile("./images/face_2.png");
-	boss.loadFromFile("./images/boss.png");
-	boss2.loadFromFile("./images/boss2.png");
-	wall.loadFromFile("./images/wall.png");
-	enemyMissile.loadFromFile("./images/enemyMissile.png");
+	filesystem::path invaderImagePath ("images/face.png");
+	filesystem::path missileImagePath ("images/red.png");
+	filesystem::path playerImagePath ("images/Death_sphere.png");
+	filesystem::path invader2ImagePath ("images/face_2.png");
+	filesystem::path bossImagePath ("images/boss.png");
+	filesystem::path boss2ImagePath ("images/boss_2");
+	filesystem::path wallImagePath ("images/wall.png");
+	filesystem::path enemyMissileImagePath ("images/enemyMissile.png");
+	filesystem::path backgroundImagePath ("images/back.png");
+	filesystem::path fontPath ("fonts/RubikBurned/RubikBurned-Regular.ttf");
+	filesystem::path dataDir (DATA_DIR);
+
+
+	invader.loadFromFile(dataDir / invaderImagePath);
+	missile.loadFromFile(dataDir / missileImagePath);
+	ship.loadFromFile(dataDir / playerImagePath);
+	invader2.loadFromFile(dataDir / invader2ImagePath);
+	boss.loadFromFile(dataDir / bossImagePath);
+	boss2.loadFromFile(dataDir / boss2ImagePath);
+	wall.loadFromFile(dataDir / wallImagePath);
+	enemyMissile.loadFromFile(dataDir / enemyMissileImagePath);
 	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Dross");
 	Font font;
-	font.loadFromFile("./fonts/RubikBurned/RubikBurned-Regular.ttf");
+	font.loadFromFile(dataDir / fontPath);
  	Text text;
 
 	Player player(ship, missile, 5, 2, 5, true, window.getSize().y - 80);
@@ -75,7 +98,7 @@ int main()
 	window.setFramerateLimit(60);
 
 	Texture starsTexture;
-	if (!starsTexture.loadFromFile("./images/back.png"))
+	if (!starsTexture.loadFromFile(dataDir / backgroundImagePath))
 	{
 		cout << "Unable to load stars texture!" << endl;
 		exit(EXIT_FAILURE);
