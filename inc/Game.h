@@ -17,7 +17,7 @@ class Game
 
 private:
 
-	int killCount; //the number of total kills this game (resets if you lose the game though)
+	int killCount = 0; //the number of total kills this game (resets if you lose the game though)
 	Player player; //the player
 	vector<levelData> levels; //the data for all the levels
 	Level currentLevel; //the current level

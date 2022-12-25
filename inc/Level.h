@@ -32,7 +32,7 @@ class Level
 
 private:
 
-	int killCount; //the number of kills so far on this level
+	int killCount = 0; //the number of kills so far on this level
  	list<Enemy> enemies; //the enemies
 	list<Projectile> enemyFire, playerFire; //the enemy and player missiles
 	RenderWindow* win; //the window to draw to

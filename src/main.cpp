@@ -44,7 +44,7 @@ int main()
 	filesystem::path wallImagePath ("images/wall.png");
 	filesystem::path enemyMissileImagePath ("images/enemyMissile.png");
 	filesystem::path backgroundImagePath ("images/back.png");
-	filesystem::path fontPath ("fonts/RubikBurned/RubikBurned-Regular.ttf");
+	filesystem::path fontPath ("fonts/TradeWinds/TradeWinds-Regular.ttf");
 	filesystem::path dataDir (DATA_DIR);
 
 
