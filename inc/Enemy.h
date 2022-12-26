@@ -14,11 +14,11 @@ class Enemy: public NP_Entity
 {
 private:
 
-	int lives; //then enemies lives
-	float fireSpeed; //the enemies bullet speed
-	int bulletDmg; //the bullet's damage
+	int lives = 1; //then enemies lives
+	float fireSpeed = 1; //the enemies bullet speed
+	int bulletDmg = 1; //the bullet's damage
 	Texture *bulletImg; //the bullets texture
-	FirePattern pattern;
+	FirePattern pattern = STRAIGHT;
 	 
 public:
 

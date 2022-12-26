@@ -16,8 +16,8 @@ class Display
 private:
 
 	RenderWindow * win; //the window to draw to
-	dispState state; //the state of the display (whether the user has clicked to move on)
-	dispType type; //the way the user selects to move on
+	dispState state = STAY; //the state of the display (whether the user has clicked to move on)
+	dispType type = ENTER; //the way the user selects to move on
 	Text title; //the title text
 	Text text; //the primary text
 	Text click; //the prompt text

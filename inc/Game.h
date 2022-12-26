@@ -21,15 +21,15 @@ private:
 	Player player; //the player
 	vector<levelData> levels; //the data for all the levels
 	Level currentLevel; //the current level
-	int lvlCounter; //the current level number
+	int lvlCounter = 0; //the current level number
 	RenderWindow* win; //the window to draw to
 	Display screen; //this is reused for the pause, win, lose, transition, and menu screens
 	GameState state; //the state of the game, playing a level, paused, on the menu, etc.
 	Text kills; //the number of kills on the current level is displayed with this
 	Text lives; //the current number of lives is displayed with this
 	Text level; //the current level number is displayed with this
-	bool space; //whether or not the space bar was pressed (resets when you release it)
-	bool click; //whether or not the left mouse button has been clicked (resets when you release it)
+	bool space = false; //whether or not the space bar was pressed (resets when you release it)
+	bool click = false; //whether or not the left mouse button has been clicked (resets when you release it)
 	RectangleShape bar; //the top bar of the screen (not really necessary since I changed the background, but would be necessary for some backgrounds)
 
 public:

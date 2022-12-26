@@ -79,7 +79,7 @@ void Display::updateTextPos()
 	text.setPosition(((win->getSize().x) / 2) - ((text.getLocalBounds().width) / 2), (win->getSize().y / 2) - ((text.getLocalBounds().height) / 2) + 40);
 	click.setPosition(((win->getSize().x) / 2) - ((click.getLocalBounds().width) / 2), (win->getSize().y / 2) - ((click.getLocalBounds().height) / 2) + 80);
 	shape.setPosition(click.getPosition().x - 7, click.getPosition().y);
-	shape.setSize(Vector2f(click.getGlobalBounds().width + 14, click.getGlobalBounds().height));
+	shape.setSize(Vector2f(click.getGlobalBounds().width + 14, click.getGlobalBounds().height + 7));
 }	
 
 //set the primary text of the screen

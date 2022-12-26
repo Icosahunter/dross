@@ -15,8 +15,8 @@ class NP_Entity
 private:
 
 	Sprite entity; //the entities sprite
-	float direction; //the entities direction
-	float speed; //the entities speed
+	float direction = 0; //the entities direction
+	float speed = 1; //the entities speed
 	RectangleShape hitBox;
 
 public:

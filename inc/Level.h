@@ -37,9 +37,9 @@ private:
 	list<Projectile> enemyFire, playerFire; //the enemy and player missiles
 	RenderWindow* win; //the window to draw to
 	WinState state; //the state of the level
-	int time; //this is used for firing frequency, it cycles through a provided nu ber, and fires when it reaches the max, before resetting
-	int fireTime; //the max value for time
-	int enemySize; //the size of the enemies
+	int time = 0; //this is used for firing frequency, it cycles through a provided nu ber, and fires when it reaches the max, before resetting
+	int fireTime = 0; //the max value for time
+	int enemySize = 1; //the size of the enemies
 
 public:
 	Level(); //default constructor

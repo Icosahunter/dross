@@ -12,15 +12,15 @@ class Player
 private:
 
 	Sprite ship; //the players sprite
-	float speed; //the players speed
-	float fireSpeed; //the players bullet speed
-	int maxLives; //the max lives of the player
-	int lives; //the current lives of the player
+	float speed = 1; //the players speed
+	float fireSpeed = 1; //the players bullet speed
+	int maxLives = 5; //the max lives of the player
+	int lives = 5; //the current lives of the player
 	Texture *shipImg; //the players texture
 	Texture *bulletImg; //the player's bullet texture
 	RenderWindow* win; //the window to draw to
 	RectangleShape hitBox; //the players hit box
-	bool hitBoxBool; //set to true to use the special hit box, false uses the player's sprites bounding box as the hit box
+	bool hitBoxBool = true; //set to true to use the special hit box, false uses the player's sprites bounding box as the hit box
 
 public:
 

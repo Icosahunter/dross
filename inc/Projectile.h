@@ -11,7 +11,7 @@ class Projectile: public NP_Entity
 
 private:
 
-	int damage; //the projectiles damage
+	int damage = 1; //the projectiles damage
 
 public:
 

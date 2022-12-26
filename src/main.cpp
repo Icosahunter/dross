@@ -34,7 +34,7 @@ int main()
 	srand(time(0));
 	const int WINDOW_WIDTH = 800;
 	const int WINDOW_HEIGHT = 600;
-	Texture invader, missile, ship, boss, boss2, invader2, enemyMissile, wall;
+	Texture starsTexture, invader, missile, ship, boss, boss2, invader2, enemyMissile, wall;
 	filesystem::path invaderImagePath ("images/face.png");
 	filesystem::path missileImagePath ("images/red.png");
 	filesystem::path playerImagePath ("images/Death_sphere.png");
@@ -47,7 +47,7 @@ int main()
 	filesystem::path fontPath ("fonts/TradeWinds/TradeWinds-Regular.ttf");
 	filesystem::path dataDir (DATA_DIR);
 
-
+	starsTexture.loadFromFile(dataDir / backgroundImagePath);
 	invader.loadFromFile(dataDir / invaderImagePath);
 	missile.loadFromFile(dataDir / missileImagePath);
 	ship.loadFromFile(dataDir / playerImagePath);
@@ -56,9 +56,16 @@ int main()
 	boss2.loadFromFile(dataDir / boss2ImagePath);
 	wall.loadFromFile(dataDir / wallImagePath);
 	enemyMissile.loadFromFile(dataDir / enemyMissileImagePath);
+
+	Sprite background;
+	background.setTexture(starsTexture);
+	background.setScale(WINDOW_WIDTH/background.getGlobalBounds().width, WINDOW_HEIGHT / background.getGlobalBounds().height);
+
 	RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Dross");
+
 	Font font;
 	font.loadFromFile(dataDir / fontPath);
+
  	Text text;
 
 	Player player(ship, missile, 5, 2, 5, true, window.getSize().y - 80);
@@ -97,16 +104,6 @@ int main()
 	// Limit the framerate to 60 frames per second
 	window.setFramerateLimit(60);
 
-	Texture starsTexture;
-	if (!starsTexture.loadFromFile(dataDir / backgroundImagePath))
-	{
-		cout << "Unable to load stars texture!" << endl;
-		exit(EXIT_FAILURE);
-	}
-
-	Sprite background;
-	background.setTexture(starsTexture);
-	background.setScale(WINDOW_WIDTH/background.getGlobalBounds().width, WINDOW_HEIGHT / background.getGlobalBounds().height);
 	game.start();
 
 	while (window.isOpen())
