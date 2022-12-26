@@ -131,7 +131,6 @@ void Display::checkForNext()
 		state = NEXT; //if the specified event occured then set state to NEXT
 }
 
-
 //update the screen, this is the function that should be called every frame this display is to be up
 void Display::update()
 {

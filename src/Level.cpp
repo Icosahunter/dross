@@ -202,7 +202,7 @@ void Level::draw()
 //update the level, this does all the stuff necessary per frame to operate the level
 void Level::update(Player &ship)
 {
-	if (allEnemiesGone()) //if the enemies are all gone, you done won
+	if (allEnemiesGone()) //if the enemies are all gone, ya done won
 		state = WON;
 	else
 	{   //otherwise update all the stuff
@@ -233,7 +233,7 @@ void Level::checkForEnemyKills()
 		}
 		if (enemIter->getLife() == 0) //if the enemies life is 0
 		{
-			enemIter = enemies.erase(enemIter); //get ridda that missile
+			enemIter = enemies.erase(enemIter); //get ridda that enemy
 			killCount++; //increment kill count
 		}
 		else

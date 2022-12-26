@@ -41,5 +41,8 @@ Dross uses the Meson build system, so you will need Meson installed. You will al
 ## TODO
 
 - Make installer
-- Add sound
-- Add animations
+- Add shooting & enemy destroyed sound effects
+- Add Music
+- Add enemy destroyed animation
+- Refactor enemy shooting (it's weird due to sticking to the original assignments wording)
+- Revamp player shooting (make it more interesting)
